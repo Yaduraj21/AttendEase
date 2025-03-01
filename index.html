@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AttendEase</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/html5-qrcode"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar">
+                <div class="navbar-left">
+                    <div class="logo-title">
+                        <img src="img/logo.png" alt="AttendEase Logo" class="logo">
+                        <h1>AttendEase</h1>
+                    </div>
+                </div>
+                <div class="navbar-right">
+                    <button class="nav-button" onclick="showLoginForm()">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
+                    </button>
+                    <button class="nav-button" onclick="showRegisterForm()">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Register</span>
+                    </button>
+                    <button class="nav-button" onclick="handleScanQR()">
+                        <i class="fas fa-qrcode"></i>
+                        <span>Scan QR</span>
+                    </button>
+                    <button class="nav-button" onclick="handleAttendance()">
+                        <i class="fas fa-clipboard-check"></i>
+                        <span>Attendance</span>
+                    </button>
+                </div>
+            </nav>
+            <main class="content">
+                <div class="auth-container">
+                    <div class="auth-card" id="loginForm">
+                        <div class="auth-header">
+                            <i class="fas fa-user-circle"></i>
+                            <h2>Login</h2>
+                        </div>
+                        <div class="auth-body">
+                            <div class="input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" placeholder="Username" id="username" required>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" placeholder="Password" id="password" required>
+                            </div>
+                            <button class="auth-button" onclick="handleLogin()">
+                                <i class="fas fa-sign-in-alt"></i>
+                                Login
+                            </button>
+                            <p class="auth-switch">
+                                Don't have an account? 
+                                <a href="#" onclick="showRegisterForm()">Register</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="auth-card" id="registerForm" style="display: none;">
+                        <div class="auth-header">
+                            <i class="fas fa-user-plus"></i>
+                            <h2>Register</h2>
+                        </div>
+                        <div class="auth-body">
+                            <div class="input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" placeholder="Username" id="reg-username" required>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" placeholder="Password" id="reg-password" required>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" placeholder="Confirm Password" id="reg-confirm-password" required>
+                            </div>
+                            <button class="auth-button" onclick="handleRegister()">
+                                <i class="fas fa-user-plus"></i>
+                                Register
+                            </button>
+                            <p class="auth-switch">
+                                Already have an account? 
+                                <a href="#" onclick="showLoginForm()">Login</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="qr-reader" style="display: none;">
+                    <div class="qr-header">
+                        <h2>Scan QR Code</h2>
+                        <button class="close-btn" onclick="handleScanQR()">×</button>
+                    </div>
+                </div>
+                <div id="qr-reader-results"></div>
+            </main>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
