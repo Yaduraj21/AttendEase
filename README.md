@@ -14,10 +14,16 @@ AttendEase is a modern attendance management system that simplifies the process 
 
 ```
 AttendEase/
-├── img/               # Image assets
-├── index.html        # Main HTML file
-├── style.css         # CSS styles
-└── script.js         # JavaScript functionality
+├── frontend/           # Frontend files
+│   ├── img/           # Image assets
+│   ├── index.html     # Main HTML file
+│   ├── style.css      # CSS styles
+│   └── script.js      # JavaScript functionality
+│
+└── backend/           # Backend Node.js files
+    ├── src/           # Source files
+    ├── package.json   # Node.js dependencies
+    └── README.md      # Backend documentation
 ```
 
 ## Getting Started
@@ -27,14 +33,27 @@ AttendEase/
    git clone https://github.com/Yaduraj21/AttendEase.git
    ```
 
-2. Open `index.html` in your web browser to start using the application.
+2. Set up the frontend:
+   - Open `frontend/index.html` in your web browser
+
+3. Set up the backend:
+   - Navigate to the backend directory: `cd backend`
+   - Install dependencies: `npm install`
+   - Start the server: `npm start`
 
 ## Technologies Used
 
+### Frontend
 - HTML5
 - CSS3
 - JavaScript
 - QR Code Integration
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB (database)
+- JWT (authentication)
 
 ## Contributing
 
